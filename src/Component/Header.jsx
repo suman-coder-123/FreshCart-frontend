@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import freshcart from '../assets/Images/freshcart.svg'
 import { FiSearch } from "react-icons/fi";
 import { GrLocation } from "react-icons/gr";
@@ -6,8 +6,17 @@ import { FiHeart } from "react-icons/fi";
 import { FiUser } from "react-icons/fi";
 import { FiShoppingBag } from "react-icons/fi";
 import { IoGridOutline } from "react-icons/io5";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { RxCross2 } from "react-icons/rx";
+import { TbRuler } from 'react-icons/tb';
+
 
 const Header = () => {
+  const [open , setOpen] = useState(false);
+
+  // const toggleMenu =()=>{
+  //   setOpen(!open);
+  // };
   return (
     <>
       <div>
@@ -18,13 +27,13 @@ const Header = () => {
           <img src={freshcart} alt="logo" />
         </div>
         <div className='flex items-center gap-2 w-full max-w-xl' >
-          <div className='flex items-center border rounded-lg px-3 py-2 w-full border-gray-400 '>
+          <div className=' hidden lg:flex items-center border rounded-lg px-3 py-2 w-full border-gray-400 '>
           <input type="text"
           placeholder='search your product '
           className="flex-1 bg-transparent text-gray-600 font-medium" />
           <FiSearch   className="text-black 700 text-xl"/>
           </div>       
-          <button className='flex items-center gap-1 border rounded-lg px-4 py-2 text-gray-400 border-gray-400
+          <button className=' hidden lg:flex items-center gap-1 border rounded-lg px-4 py-2 text-gray-400 border-gray-400
  font-medium hover:bg-gray-100'>
             <GrLocation    className="text-gray-800 text-lg " /> Location</button>
         </div >
@@ -38,16 +47,19 @@ const Header = () => {
           <button>
             <FiShoppingBag  className="text-gray-800 text-xl "/>
           </button>
+          <button onClick={()=>setOpen(true)} className='lg:hidden '>
+            <GiHamburgerMenu  className='text-green-500 text-2xl '/>
+          </button>
         </div>
       </div>
 
-      <div className='px-20 flex items-center gap-6  '>
-        <button className='flex items-center px-4 py-2 rounded-lg gap-3 bg-[#0aad0a] text-white'>
+      <div className='  hidden lg:flex px-20 items-center gap-6  '>
+        <button className=' hidden lg:flex items-center px-4 py-2 rounded-lg gap-3 bg-[#0aad0a] text-white'>
           <IoGridOutline className='text-white' />
           All Departments
         </button>
 
-        <div className='flex items-center gap-1'>
+        <div className=' flex items-center gap-1'>
           <label htmlFor="home" className='pb-1'>Home</label>
           <select name="home" id="home" >
             <option value="default"> </option>
@@ -92,7 +104,67 @@ const Header = () => {
         </p>
       </div>
 
+     {open && (
+      < div className='w-1/2 fixed inset-0 bg-white z-50 overflow-y-auto shadow-lg '>
+      <div className='flex justify-between itmes-center px- lg:hidden '>
+        <div>
+          <img src={freshcart} alt="logo" />
+        </div>
 
+        <button><RxCross2 /></button>
+      </div>
+      <div className='   px-20 items-center gap-6  lg:hidden '>
+        <button className=' px-4 py-2  flex items-center rounded-lg gap-3 bg-[#0aad0a] text-white lg:hidden  '>
+          <IoGridOutline className='text-white' />
+          All Departments
+        </button>
+
+        <div className=' flex  items-center gap-1'>
+          <label htmlFor="home" className='pb-1'>Home</label>
+          <select name="home" id="home" >
+            <option value="default"> </option>
+          </select>
+           </div>
+           <div className='flex items-center gap-1'>
+            <label htmlFor="shop" className='pb-1'>Shop</label>
+          <select name="shop" id="shop" >
+            <option value="default"> </option>
+          </select>
+           </div>
+          <div className='flex items-center gap-1'>
+            <label htmlFor="stores" className='pb-1'>Stores</label>
+          <select name="stores" id="stores" >
+            <option value="default"> </option>
+          </select>
+          </div>
+          <div className='flex items-center gap-1'>
+            <label htmlFor="menu" className='pb-1'>Mega Menu</label>
+          <select name="menu" id="menu" >
+            <option value="default"> </option>
+          </select>
+          </div>
+          <div className='flex items-center gap-1'>
+            <label htmlFor="pages" className='pb-1'>Pages</label>
+          <select name="pages" id="pages" >
+            <option value="default"> </option>
+          </select>
+          </div> 
+          <div className='flex items-center gap-1'>
+          <label htmlFor="account" className='pb-1'>Account</label>
+          <select name="account" id="account" >
+            <option value="default"> </option>
+          </select>
+          </div> 
+        
+        <p className='pb-1'>
+          Dashboard
+        </p>
+        <p className='pb-1'>
+          Docs
+        </p>
+      </div>
+    </div>
+     )}
 
 
 

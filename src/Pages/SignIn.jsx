@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import freshcart from '../assets/Images/freshcart.svg'
 import Signin from '../assets/Images/Signin.svg'
 import { Link } from 'react-router-dom'
+import Footer from '../Component/Footer'
 
 const SignIn = () => {
 
@@ -31,7 +32,7 @@ const SignIn = () => {
               </div>  
             </div>
       
-            <div className='flex items-center justify-center mt-10  xl:mt-2 bg-white'>
+            <div className='flex items-center justify-center mt-10 mb-20  xl:mt-2 bg-white'>
                       <div className="flex flex-col-reverse  md:flex-row lg:flex-row  max-w-6xl w-full items-center">
       
                       <div className=" flex w-1/2 justify-center  ">
@@ -57,6 +58,10 @@ const SignIn = () => {
               </div>
       
               </div>
+              </div>
+
+              <div>
+                <Footer/>
               </div>
     </>
   )

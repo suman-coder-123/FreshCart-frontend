@@ -1,7 +1,8 @@
-import React from 'react'
+import React  , {useState}from 'react'
 import freshcart from '../assets/Images/freshcart.svg'
 import reset from '../assets/Images/reset.svg'
 import { Link } from 'react-router-dom'
+import Footer from '../Component/Footer'
 
 const Reset = () => {
   const [resetData , setResetData] = useState({email:""});
@@ -20,7 +21,7 @@ const Reset = () => {
     };
   return (
     <div>
-            <div className='flex  flex-col md:flex-row justify-between items-center px-20 py-3 font-medium text text-[#21313c] shadow-[0px_2px_4px_rgba(0,0,0,0.18)]'>
+            <div className='flex  flex-col md:flex-row justify-between  items-center  px-20 py-3 font-medium text text-[#21313c] shadow-[0px_2px_4px_rgba(0,0,0,0.18)]'>
               <div className='mb-3 md:mb-0'>
                   <img src={freshcart} alt="logo" className='h-8 md:h-10' />
               </div>
@@ -30,7 +31,7 @@ const Reset = () => {
               </div>  
             </div>
       
-            <div className='flex items-center justify-center mt-30  bg-white'>
+            <div className='flex items-center justify-center my-20  bg-white'>
                       <div className="flex flex-col-reverse  md:flex-row lg:flex-row  max-w-6xl w-full items-center">
       
                       <div className=" flex w-1/2 justify-center  ">
@@ -41,13 +42,20 @@ const Reset = () => {
                   <p className='text-gray-500 mb-6 text-sm sm:text-base '>Please enter the email address associated with your <br  className='hidden sm:block '/> account and We will email you a link to reset your.<br  className='hidden sm:block '/>password.</p>
                   <form onSubmit={handleSubmit} action="" className="space-y-4">
                       
-                      <input type="email" name='email' placeholder='Email' value={resetData.email} onChange={handleChange}  className=' w-2/3  px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 border-gray-400'/>
+                      <input type="email" name='email' placeholder='Email'
+                       value={resetData.email} 
+                       onChange={handleChange} 
+                        className=' w-2/3  px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 border-gray-400'/>
                       <button type='submit' className='w-2/3 py-2 bg-[#0aad0a] text-white rounded-lg hover:bg-green-700 transition border-gray-400'>Reset Password</button>
                       <button className='block w-2/3 py-2 bg-gray-100 text-black rounded-lg hover:bg-gray-200 transition border-gray-400'>Back </button>
                   </form>
               </div>
       
               </div>
+              </div>
+
+              <div>
+                <Footer/>
               </div>
     </div>
   )
