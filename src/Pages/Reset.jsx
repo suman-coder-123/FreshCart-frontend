@@ -3,6 +3,7 @@ import freshcart from '../assets/Images/freshcart.svg'
 import reset from '../assets/Images/reset.svg'
 import { Link } from 'react-router-dom'
 import Footer from '../Component/Footer'
+import axios from 'axios'
 
 const Reset = () => {
   const [resetData , setResetData] = useState({email:""});
@@ -10,14 +11,14 @@ const Reset = () => {
       const {name, value}=e.target;
       setResetData((prevData)=>{
         const updated ={...prevData, [name]:value};
-        console.log("updated date :", updated)
         return updated ;
       });
     };
   
     const handleSubmit =(e)=>{
       e.preventDefault();
-      console.log("submitted data:", resetData);
+
+      axios.post("http://localhost:5000/reset", {resetData})
     };
   return (
     <div>
