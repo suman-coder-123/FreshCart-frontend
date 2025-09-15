@@ -44,8 +44,8 @@ const SignIn = () => {
                   <p className='text-gray-600 mb-6 text-sm sm:text-base'>Welcome to FreshCart! Enter your email to get <br  className='hidden sm:block '/> started.</p>
                   <form onSubmit={handleSubmit} action="" className="space-y-4">
                       
-                      <input type="email" name='email' placeholder='Email' value={loginData.email} onChange={handleChange} className=' w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 border-gray-400'/>
-                      <input type="password" name='password' placeholder='*****' value={loginData.password} onChange={handleChange} className='  w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 border-gray-400' />
+                      <input type="email" name='email' placeholder='Email' value={loginData.email} onChange={handleChange} className=' w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-4 focus:ring-green-100 border-gray-400'/>
+                      <input type="password" name='password' placeholder='*****' value={loginData.password} onChange={handleChange} className='  w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-4 focus:ring-green-100 border-gray-400' />
                       <div className='flex justify-between items-center fold-medium text-grey-600 '>
                         <div className='flex justify-start items-center gap-2'>
                             <input type="checkbox" id='remember'/>

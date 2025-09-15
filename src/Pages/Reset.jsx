@@ -46,7 +46,7 @@ const Reset = () => {
                       <input type="email" name='email' placeholder='Email'
                        value={resetData.email} 
                        onChange={handleChange} 
-                        className=' w-2/3  px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 border-gray-400'/>
+                        className=' w-2/3  px-3 py-2 border rounded-lg focus:outline-none focus:ring-4 focus:ring-green-100 border-gray-400'/>
                       <button type='submit' className='w-2/3 py-2 bg-[#0aad0a] text-white rounded-lg hover:bg-green-700 transition border-gray-400'>Reset Password</button>
                       <button className='block w-2/3 py-2 bg-gray-100 text-black rounded-lg hover:bg-gray-200 transition border-gray-400'>Back </button>
                   </form>

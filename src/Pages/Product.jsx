@@ -15,7 +15,7 @@ const Product = () => {
             <p className='text-sm text-[#21313c]'>Dashboard</p>
         </div>
         
-        <button  onClick={()=> navigate('/addproduct')} className='flex items-center px-4 py-2 rounded-lg gap-3 bg-[#0aad0a] text-white'>Add Product</button>
+        <button  onClick={()=> navigate('/admin/addproduct')} className='flex items-center px-4 py-2 rounded-lg gap-3 bg-[#0aad0a] text-white'>Add Product</button>
     
       </div>
 
@@ -24,9 +24,9 @@ const Product = () => {
         <input
         type="text"
         placeholder="Search Product "
-        className="border rounded-lg px-2 py-1 bg-transparent text-gray-400 font-medium focus:outline-none focus:ring-2 focus:ring-green-500"/>
+        className="border rounded-lg px-2 py-1 bg-transparent text-gray-400 font-medium focus:outline-none focus:ring-4 focus:ring-green-100"/>
 
-        <div className="flex border rounded-lg px-2 py-1 bg-transparent text-[#21313c] font-medium focus:outline-none focus:ring-2 focus:ring-green-500" >
+        <div className="flex border rounded-lg px-2 py-1 bg-transparent text-[#21313c] font-medium focus:outline-none focus:ring-4 focus:ring-green-100" >
           <select name="status" id="status">
             <option value="">Status</option>
             <option value="">Active</option>

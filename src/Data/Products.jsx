@@ -13,14 +13,6 @@ export const Products =[
     createdAt: "24 Nov 2022",
     image: "/assets/Images/sev.jpg"
     },
-    {
-    id: 2,
-    name: "NutriChoice Digestive",
-    category: "Bakery & Biscuits",
-    status: "Active",
-    price: 24,
-    createdAt: "20 Nov 2022",
-    image: "/assets/Images/sev.jpg"
-    }
+    
 
 ]

@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import freshcart from "../assets/Images/freshcart.svg";
 import Signup from "../assets/Images/Signup.svg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Footer from "../Component/Footer";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 const Registration = () => {
+  let go=useNavigate()
   const [formData, setFormData] = useState({
     firstname: "",
     lastname: "",
@@ -20,12 +22,51 @@ const Registration = () => {
     });
   };
 
+  let [users, setusers] = useState([]);
+
+  useEffect(() => {
+    alreadyusers();
+  }, []);
+
+  let alreadyusers = () => {
+    axios.get("http://localhost:5000/allusers").then((res) => {
+      if (res.data.status) {
+        setusers(res.data.ourusers);
+      }
+    });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios.post("http://localhost:5000/signup",{formData})
+    let existuser = users.filter((data) => data.email == formData.email);
+    let filteruser = existuser[0];
+    if (filteruser) {
+      Swal.fire({
+        icon: "error",
+        title: "already user",
+      });
+    } else {
+      axios
+        .post("http://localhost:5000/signup", { formData })
+        .then((res) => {
+          if (res.data.status) {
+            Swal.fire({
+              text: "signup success",
+              icon: "success",
+            });
 
+            go("/signin")
 
+          } else {
+            Swal.fire({
+              icon: "error",
+              title: "not sigup........",
+            });
+          }
+        })
+        .catch((err) => {});
+    }
   };
   return (
     <>
@@ -60,38 +101,38 @@ const Registration = () => {
             </p>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="flex space-x-4  ">
-                <input
+                <input required
                   type="text"
                   name="firstname"
                   placeholder="First Name"
                   value={formData.firstname}
                   onChange={handleChange}
-                  className="w-full  sm:w-1/2 px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 border-gray-400"
+                  className="w-full  sm:w-1/2 px-4 py-3 border rounded-lg focus:outline-none focus:ring-4 focus:ring-green-100 border-gray-400"
                 />
-                <input
+                <input required
                   type="text"
                   name="lastname"
                   placeholder="Last Name"
                   value={formData.lastname}
                   onChange={handleChange}
-                  className="w-full sm:w-1/2 px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 border-gray-400"
+                  className="w-full sm:w-1/2 px-4 py-3 border rounded-lg focus:outline-none focus:ring-4 focus:ring-green-100 border-gray-400"
                 />
               </div>
-              <input
+              <input required
                 type="email"
                 name="email"
                 placeholder="Email"
                 value={formData.email}
                 onChange={handleChange}
-                className=" w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 border-gray-400"
+                className=" w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-4 focus:ring-green-100 border-gray-400"
               />
-              <input
+              <input required
                 type="password"
                 name="password"
                 placeholder="*****"
                 value={formData.password}
                 onChange={handleChange}
-                className="  w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 border-gray-400"
+                className="  w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-4 focus:ring-green-100 border-gray-400"
               />
               <button
                 type="submit"

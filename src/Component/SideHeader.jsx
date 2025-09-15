@@ -8,7 +8,7 @@ const SideHeader = () => {
       <input
         type="text"
         placeholder="Search"
-        className="border rounded-lg px-3 py-2 bg-transparent text-gray-400 font-medium focus:outline-none focus:ring-2 focus:ring-green-500"
+        className="border rounded-lg px-3 py-2 bg-transparent text-gray-400 font-medium focus:outline-none focus:ring-4 focus:ring-green-100"
       />
       <div className="flex items-center space-x-4 px-3">
         <button>
