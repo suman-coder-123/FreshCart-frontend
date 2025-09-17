@@ -6,8 +6,7 @@ const ProductTable = ({products}) => {
       <div className="">
         <table className="min-w-full text-left">
             <thead className="bg-gray-200">
-                <tr>
-                  
+                <tr> 
                     <th className="p-3 text-[#5c6c75] font-medium ">Image</th>
                     <th className="p-3 text-[#5c6c75] font-medium ">Product Name</th>
                     <th className="p-3 text-[#5c6c75] font-medium ">Category</th>

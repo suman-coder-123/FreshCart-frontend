@@ -1,12 +1,13 @@
 import React  , {useState}from 'react'
 import freshcart from '../assets/Images/freshcart.svg'
 import reset from '../assets/Images/reset.svg'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Footer from '../Component/Footer'
 import axios from 'axios'
+import Swal from 'sweetalert2'
 
 const Reset = () => {
-  const [resetData , setResetData] = useState({email:""});
+  const [resetData , setResetData] = useState({email:"" , password:""});
     const handleChange=(e)=>{
       const {name, value}=e.target;
       setResetData((prevData)=>{
@@ -15,10 +16,25 @@ const Reset = () => {
       });
     };
   
+     let set = useNavigate();
     const handleSubmit =(e)=>{
       e.preventDefault();
 
-      axios.post("http://localhost:5000/reset", {resetData})
+      axios.post("http://localhost:5000/reset", {resetData}).then ((res)=>{
+         if (res.data.status) {
+                Swal.fire({
+                  text: "Sigin success",
+                  icon: "success",
+                });
+                set("/signin");
+        
+              } else {
+                Swal.fire({
+                  icon: "error",
+                  title: "invalid email",
+                });
+              }
+      })
     };
   return (
     <div>
@@ -47,6 +63,15 @@ const Reset = () => {
                        value={resetData.email} 
                        onChange={handleChange} 
                         className=' w-2/3  px-3 py-2 border rounded-lg focus:outline-none focus:ring-4 focus:ring-green-100 border-gray-400'/>
+                      
+                      <input required
+                       type="password"
+                       name="password"
+                       placeholder="*****"
+                       value={resetData.password}
+                       onChange={handleChange}
+                       className=" w-2/3  px-3 py-2 border rounded-lg focus:outline-none focus:ring-4 focus:ring-green-100 border-gray-400"
+              />
                       <button type='submit' className='w-2/3 py-2 bg-[#0aad0a] text-white rounded-lg hover:bg-green-700 transition border-gray-400'>Reset Password</button>
                       <button className='block w-2/3 py-2 bg-gray-100 text-black rounded-lg hover:bg-gray-200 transition border-gray-400'>Back </button>
                   </form>

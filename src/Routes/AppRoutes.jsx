@@ -9,11 +9,12 @@ import Dashboard from '../Pages/Dashboard';
 import SideLayout from '../Layouts/SideLayout';
 import Product from '../Pages/Product';
 import AddProduct from '../Pages/AddProduct';   
+import Customer from '../Pages/Customer';
 
 
 const AppRoutes = () => (
   <Routes>
-
+    
     <Route path='registration' element={<Registration/>}/>
     <Route path='signin' element={<SignIn/>}/>
     <Route path='reset' element={<Reset/>}/>
@@ -26,6 +27,7 @@ const AppRoutes = () => (
     <Route index element={<Dashboard/>}/>
     <Route path='product' element={<Product/>}/>
     <Route path='addproduct' element={<AddProduct/>}/>
+    <Route path='customer' element={<Customer/>}/>
     </Route>
   </Routes>
 );

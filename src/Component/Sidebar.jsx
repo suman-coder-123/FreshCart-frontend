@@ -34,7 +34,7 @@ const Sidebar = () => {
         </div>
         
         <div >
-        <Link className='flex items-center space-x-4 px-5 py-2 my-3 text-[#5c6c75] font-medium  hover:bg-gray-100 border-gray-200 rounded-xl transition '>
+        <Link  className='flex items-center space-x-4 px-5 py-2 my-3 text-[#5c6c75] font-medium  hover:bg-gray-100 border-gray-200 rounded-xl transition '>
         <CiCircleList  />
         <p>Catagories</p>
         </Link>
@@ -55,7 +55,7 @@ const Sidebar = () => {
         </div>
 
          <div >
-        <Link className='flex items-center space-x-4 px-5 py-2 my-3 text-[#5c6c75] font-medium  hover:bg-gray-100 border-gray-200 rounded-xl transition '>
+        <Link to="customer" className='flex items-center space-x-4 px-5 py-2 my-3 text-[#5c6c75] font-medium  hover:bg-gray-100 border-gray-200 rounded-xl transition '>
         <IoPeopleOutline />
         <p>Customers</p>
         </Link>
