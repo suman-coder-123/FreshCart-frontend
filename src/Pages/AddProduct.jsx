@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 const AddProduct = () => {
   const navigate = useNavigate();
     const [productData , setProductData] = useState({
-        title:"", category:"",weight:"", weightUnit:"",image:"", description:"",code:"", SKU:"",status:"", regularPrice:"", salePrice:"",
+        title:"", category:"",weight:"", weightUnit:"",image1:"",image2:"",image3:"",image4:"", image5:"", description:"",code:"", SKU:"",status:"", regularPrice:"", salePrice:"",
     });
     const handleChange = (e) => {
     const { name, value } = e.target;
@@ -146,7 +146,59 @@ const AddProduct = () => {
                 type="url"
                 placeholder="Enter Your Image URL "
                 name="image"
-                value={productData.image}
+                value={productData.image1}
+                onChange={handleChange}
+                id="image"
+                className="w-full px-3 py-2 my-2 border rounded-lg focus:outline-none focus:ring-4 focus:ring-green-100 border-gray-400"
+              />
+            </div>
+
+            <div>
+             
+              <input
+                type="url"
+                placeholder="Enter Your Image URL "
+                name="image"
+                value={productData.image2}
+                onChange={handleChange}
+                id="image"
+                className="w-full px-3 py-2 my-2 border rounded-lg focus:outline-none focus:ring-4 focus:ring-green-100 border-gray-400"
+              />
+            </div>
+
+            <div>
+              
+              <input
+                type="url"
+                placeholder="Enter Your Image URL "
+                name="image"
+                value={productData.image3}
+                onChange={handleChange}
+                id="image"
+                className="w-full px-3 py-2 my-2 border rounded-lg focus:outline-none focus:ring-4 focus:ring-green-100 border-gray-400"
+              />
+            </div>
+
+            <div>
+             
+              <input
+                type="url"
+                placeholder="Enter Your Image URL "
+                name="image"
+                value={productData.image4}
+                onChange={handleChange}
+                id="image"
+                className="w-full px-3 py-2 my-2 border rounded-lg focus:outline-none focus:ring-4 focus:ring-green-100 border-gray-400"
+              />
+            </div>
+
+            <div>
+              
+              <input
+                type="url"
+                placeholder="Enter Your Image URL "
+                name="image"
+                value={productData.image5}
                 onChange={handleChange}
                 id="image"
                 className="w-full px-3 py-2 my-2 border rounded-lg focus:outline-none focus:ring-4 focus:ring-green-100 border-gray-400"
@@ -157,14 +209,15 @@ const AddProduct = () => {
               <p className="text-lg font-medium text-[#21313c]">
                 Product Description
               </p>
-              <input
-                type="textarea"
+              
+              <textarea
                 name="description"
                 value={productData.description}
                 onChange={handleChange}
                 id="description"
                 className="w-full px-3 py-2 my-2 border rounded-lg  border-gray-400"
-              />
+              >
+                </textarea>
             </div>
           </div>
         </div>

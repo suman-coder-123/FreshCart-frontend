@@ -1,11 +1,21 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link , useNavigate } from 'react-router-dom'
 import ProductTable from '../Component/ProductTable'
-import { Products } from '../Data/Products'
+import axios from 'axios';
 
 
 const Product = () => {
     const navigate= useNavigate();
+
+    const [product, setProduct] =useState([]);
+
+    useEffect (() =>{
+      axios.get("http://localhost:5000/products").then((res) =>{
+        if (res.data.status){
+          setProduct(res.data.ourproducts);
+        }
+      });
+    } ,[]);
 
   return (
     <div>
@@ -37,7 +47,7 @@ const Product = () => {
       
         </div>
 
-        <ProductTable products={Products}/>
+        <ProductTable  product={product}/>
 
         
 

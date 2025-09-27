@@ -10,17 +10,21 @@ import SideLayout from '../Layouts/SideLayout';
 import Product from '../Pages/Product';
 import AddProduct from '../Pages/AddProduct';   
 import Customer from '../Pages/Customer';
-
+import Productdeatils from '../Pages/Productdeatils';
+import CartDetail from '../Pages/CartDetail';
+import WishList from '../Pages/WishList';
 
 const AppRoutes = () => (
   <Routes>
-    
+    <Route path='cartdetail' element={<CartDetail/>}/>
     <Route path='registration' element={<Registration/>}/>
     <Route path='signin' element={<SignIn/>}/>
     <Route path='reset' element={<Reset/>}/>
     <Route path='/' element={<MainLayout/>}>
     <Route index element={<Home/>}/>
-    <Route path='Home' element={<Home/>}/>    
+    <Route path='Home' element={<Home/>}/>  
+    <Route path='productdeatails' element={<Productdeatils/>}/>
+    <Route path='wishlist' element={<WishList/>}/>
     </Route>
    
     <Route path='/admin' element={<SideLayout/>}>

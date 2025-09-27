@@ -10,10 +10,7 @@ import { IoGridOutline } from "react-icons/io5";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross2 } from "react-icons/rx";
 
-
 const Header = () => {
-  const [open , setOpen] = useState(false);
-
 
   return (
     <>
@@ -22,7 +19,9 @@ const Header = () => {
       </div>
       <div className='flex justify-between items-center px-20 py-7'>
         <div>
-          <img src={freshcart} alt="logo" />
+          <Link to="/home">
+           <img src={freshcart} alt="logo" />
+          </Link>  
         </div>
         <div className='flex items-center gap-2 w-full max-w-xl' >
           <div className=' hidden lg:flex items-center border rounded-lg px-3 py-2 w-full border-gray-400 '>
@@ -36,18 +35,23 @@ const Header = () => {
             <GrLocation    className="text-gray-800 text-lg " /> Location</button>
         </div >
         <div className='flex  items-center gap-3'>
+          <Link to="/wishlist">
           <button>
             <FiHeart   className="text-gray-800 text-xl "/>
           </button>
+          </Link>
           <button>
             <FiUser  className="text-gray-800 text-xl "/>
           </button>
-          <button>
-            <FiShoppingBag  className="text-gray-800 text-xl "/>
+          <Link to="/CartDetail">
+          <button >
+            <FiShoppingBag  className="text-gray-800 text-xl  cursor-pointer"/>
           </button>
-          <button onClick={()=>setOpen(true)} className='lg:hidden '>
+           </Link>
+          <button  className='lg:hidden '>
             <GiHamburgerMenu  className='text-green-500 text-2xl '/>
           </button>
+         
         </div>
       </div>
 
