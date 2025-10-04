@@ -20,7 +20,7 @@ const ProductTable = ({product}) => {
             </thead>
         <tbody>
           {product.map((products) => (
-         <tr key={products._id} className="border-b">
+         <tr key={products._id} className="">
           <td className='p-3'> <input type="checkbox" /></td>
               <td className="p-3">
                 <img src={products.image} alt="product image" />

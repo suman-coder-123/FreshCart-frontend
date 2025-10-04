@@ -3,7 +3,7 @@ import React from "react";
 const CustomerTable = ({ users }) => {
   return (
     <div className="overflow-x-auto mt-6">
-      <table className="min-w-full text-left border">
+      <table className="min-w-full text-left ">
         <thead className="bg-gray-200">
           <tr>
             <th className="p-3 text-[#5c6c75] font-medium">Name</th>
@@ -16,7 +16,7 @@ const CustomerTable = ({ users }) => {
         </thead>
         <tbody>
           {users.map((user) => (
-            <tr key={user._id} className="border-b">
+            <tr key={user._id} className="">
               <td className="p-3">
                 {user.firstname} {user.lastname}
               </td>

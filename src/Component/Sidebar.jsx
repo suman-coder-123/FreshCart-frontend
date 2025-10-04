@@ -46,14 +46,14 @@ const Sidebar = () => {
           </div>
 
           <div>
-            <Link className="flex items-center space-x-4 px-5 py-2  my-3 text-[#5c6c75] font-medium  hover:bg-gray-100 border-gray-200 rounded-xl transition ">
+            <Link  className="flex items-center space-x-4 px-5 py-2  my-3 text-[#5c6c75] font-medium  hover:bg-gray-100 border-gray-200 rounded-xl transition ">
               <IoBagOutline />
               <p>Orders</p>
             </Link>
           </div>
 
           <div>
-            <Link className="flex items-center space-x-4 px-5 py-2 my-3 text-[#5c6c75] font-medium  hover:bg-gray-100 border-gray-200 rounded-xl transition ">
+            <Link to="sellers" className="flex items-center space-x-4 px-5 py-2 my-3 text-[#5c6c75] font-medium  hover:bg-gray-100 border-gray-200 rounded-xl transition ">
               <IoStorefrontOutline />
               <p>Sellers/Venders</p>
             </Link>

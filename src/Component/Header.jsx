@@ -20,7 +20,7 @@ const Header = () => {
       <div className='flex justify-between items-center px-20 py-7'>
         <div>
           <Link to="/home">
-           <img src={freshcart} alt="logo" />
+           <img src={freshcart} alt="logo"  className='cursor-pointer'/>
           </Link>  
         </div>
         <div className='flex items-center gap-2 w-full max-w-xl' >
@@ -31,24 +31,26 @@ const Header = () => {
           <FiSearch   className="text-black 700 text-xl"/>
           </div>       
           <button className=' hidden lg:flex items-center gap-1 border rounded-lg px-4 py-2 text-gray-400 border-gray-400
- font-medium hover:bg-gray-100'>
+ font-medium hover:bg-gray-100 cursor-pointer'>
             <GrLocation    className="text-gray-800 text-lg " /> Location</button>
         </div >
         <div className='flex  items-center gap-3'>
           <Link to="/wishlist">
-          <button>
+          <button className='cursor-pointer '>
             <FiHeart   className="text-gray-800 text-xl "/>
           </button>
           </Link>
-          <button>
+          <Link to="/signin">
+          <button className='cursor-pointer '>
             <FiUser  className="text-gray-800 text-xl "/>
           </button>
+          </Link>
           <Link to="/CartDetail">
-          <button >
-            <FiShoppingBag  className="text-gray-800 text-xl  cursor-pointer"/>
+          <button className='cursor-pointer ' >
+            <FiShoppingBag  className="text-gray-800 text-xl  "/>
           </button>
            </Link>
-          <button  className='lg:hidden '>
+          <button  className='lg:hidden  cursor-pointer '>
             <GiHamburgerMenu  className='text-green-500 text-2xl '/>
           </button>
          
@@ -62,12 +64,33 @@ const Header = () => {
         </button>
 
         <div className=' flex items-center gap-1'>
-          <label htmlFor="home" className='pb-1'>Home</label>
-          <select name="home" id="home" >
-            <option value="default"> </option>
-          </select>
+          <div className="relative group flex items-center gap-1 cursor-pointer">
+  <label className="pb-1 font-medium text-gray-800">Home</label>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className="h-4 w-4 mt-1 text-gray-500"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+  >
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+  </svg>
+
+  {/* Dropdown Menu */}
+  <div className="absolute left-0 top-full mt-2 w-48 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10">
+    <ul className="py-2 text-gray-700">
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Home Default</li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Home Modern</li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Home Creative</li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Home Local Store</li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Home Minimalist</li>
+    </ul>
+  </div>
+</div>
+
            </div>
            <div className='flex items-center gap-1'>
+            
             <label htmlFor="shop" className='pb-1'>Shop</label>
           <select name="shop" id="shop" >
             <option value="default"> </option>
