@@ -13,7 +13,7 @@ export default function CartDetail() {
   }, []);
 
   let cartdata = () => {
-    axios.get("https://freshcart-backend-do1f.vercel.app/allcartitem").then((res) => {
+    axios.get("https://freshcart-backend-opal.vercel.app/allcartitem").then((res) => {
       if (res.data.status) {
         setcartitem(res.data.cartitem);
       }
@@ -22,7 +22,7 @@ export default function CartDetail() {
 
 
   let removeitem=(item)=>{
-    axios.post("https://freshcart-backend-do1f.vercel.app/removecartitem",{item}).then((res) => {
+    axios.post("https://freshcart-backend-opal.vercel.app/removecartitem",{item}).then((res) => {
       if (res.data.status) {
         window.location.reload()
       }

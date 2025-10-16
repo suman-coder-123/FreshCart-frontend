@@ -19,7 +19,7 @@ const AddProduct = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    axios.post("https://freshcart-backend-do1f.vercel.app/addproduct" ,{productData})
+    axios.post("https://freshcart-backend-opal.vercel.app/addproduct" ,{productData})
     .then((res) => {
             if (res.data.status) {
               Swal.fire({

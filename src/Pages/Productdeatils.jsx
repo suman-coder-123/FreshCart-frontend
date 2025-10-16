@@ -21,7 +21,7 @@ export default function Productdeatils() {
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
-    axios.get("https://freshcart-backend-do1f.vercel.app/allcartitem").then((res) => {
+    axios.get("https://freshcart-backend-opal.vercel.app/allcartitem").then((res) => {
       if (res.data.status) 
       setCart(res.data.cartitem);
     });
@@ -37,7 +37,7 @@ export default function Productdeatils() {
       });
     } else {
       axios
-        .post("https://freshcart-backend-do1f.vercel.app/addcart", { item })
+        .post("https://freshcart-backend-opal.vercel.app/addcart", { item })
         .then((res) => {
           if (res.data.status) {
             Swal.fire({
@@ -59,7 +59,7 @@ export default function Productdeatils() {
   const [list , setList] = useState([]);
 
   useEffect(() => {
-    axios.get("https://freshcart-backend-do1f.vercel.app/allListItem").then((res) => {
+    axios.get("https://freshcart-backend-opal.vercel.app/allListItem").then((res) => {
       if (res.data.status) 
       setList(res.data.listItem);
     });
@@ -74,7 +74,7 @@ export default function Productdeatils() {
         title: "Already in wishlist",
       });
     } else{
-       axios.post("https://freshcart-backend-do1f.vercel.app/WishList", { item })
+       axios.post("https://freshcart-backend-opal.vercel.app/WishList", { item })
         .then((res) => {
           if (res.data.status) {
             Swal.fire({

@@ -11,7 +11,7 @@ const WishList = () => {
   },[])
 
   let WishList = () =>{
-    axios.get("https://freshcart-backend-do1f.vercel.app/allListItem").then((res) =>{
+    axios.get("https://freshcart-backend-opal.vercel.app/allListItem").then((res) =>{
       if(res.data.status){
         setListItem(res.data.listItem || []);
       }
@@ -20,7 +20,7 @@ const WishList = () => {
 
 
   let removeProduct=(item)=>{
-    axios.post("https://freshcart-backend-do1f.vercel.app/removeListItem",{item}).then((res) => {
+    axios.post("https://freshcart-backend-opal.vercel.app/removeListItem",{item}).then((res) => {
       if (res.data.status) {
         window.location.reload()
       }

@@ -28,13 +28,16 @@ const Registration = () => {
     alreadyusers();
   }, []);
 
+
   let alreadyusers = () => {
-    axios.get("https://freshcart-backend-do1f.vercel.app/allusers").then((res) => {
+    axios.get("https://freshcart-backend-opal.vercel.app/allusers").then((res) => {
       if (res.data.status) {
         setusers(res.data.ourusers);
+        
       }
-    });
-  };
+    })
+  }
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -48,7 +51,7 @@ const Registration = () => {
       });
     } else {
       axios
-        .post("https://freshcart-backend-do1f.vercel.app/signup", { formData })
+        .post("https://freshcart-backend-opal.vercel.app/signup", { formData })
         .then((res) => {
           if (res.data.status) {
             Swal.fire({

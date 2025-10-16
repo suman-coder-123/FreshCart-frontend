@@ -10,7 +10,7 @@ export default function Products() {
   }, []);
 
   let apidata = () => {
-    axios.get("https://freshcart-backend-do1f.vercel.app/products").then((res) => {
+    axios.get("https://freshcart-backend-opal.vercel.app/products").then((res) => {
       if (res.data.status) {
         setproduct(res.data.ourproducts);
       }

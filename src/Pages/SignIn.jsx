@@ -21,7 +21,7 @@ const SignIn = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios.post("https://freshcart-backend-do1f.vercel.app/signin", { loginData }).then((res) => {
+    axios.post("https://freshcart-backend-opal.vercel.app/signin", { loginData }).then((res) => {
       if (res.data.status) {
         Swal.fire({
           text: "Sigin success",
