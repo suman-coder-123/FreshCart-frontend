@@ -7,7 +7,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 
 const Registration = () => {
-  let go=useNavigate()
+  let go = useNavigate();
   const [formData, setFormData] = useState({
     firstname: "",
     lastname: "",
@@ -22,54 +22,40 @@ const Registration = () => {
     });
   };
 
-  let [users, setusers] = useState([]);
+  // let [users, setusers] = useState([]);
 
   useEffect(() => {
     alreadyusers();
   }, []);
 
+  // let alreadyusers = () => {
+  //   axios.get("https://freshcart-backend-opal.vercel.app/allusers").then((res) => {
+  //     if (res.data.status) {
+  //       setusers(res.data.ourusers);
 
-  let alreadyusers = () => {
-    axios.get("https://freshcart-backend-opal.vercel.app/allusers").then((res) => {
-      if (res.data.status) {
-        setusers(res.data.ourusers);
-        
-      }
-    })
-  }
-
+  //     }
+  //   })
+  // }
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    axios.post("https://freshcart-backend-opal.vercel.app/signup", { formData })
+      .then((res) => {
+        if (res.data.status) {
+          Swal.fire({
+            text: "signup success",
+            icon: "success",
+          });
 
-    let existuser = users.filter((data) => data.email == formData.email);
-    let filteruser = existuser[0];
-    if (filteruser) {
-      Swal.fire({
-        icon: "error",
-        title: "already user",
-      });
-    } else {
-      axios
-        .post("https://freshcart-backend-opal.vercel.app/signup", { formData })
-        .then((res) => {
-          if (res.data.status) {
-            Swal.fire({
-              text: "signup success",
-              icon: "success",
-            });
-
-            go("/signin")
-
-          } else {
-            Swal.fire({
-              icon: "error",
-              title: "not sigup........",
-            });
-          }
-        })
-        .catch((err) => {});
-    }
+          go("/signin");
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "not sigup........",
+          });
+        }
+      })
+      .catch((err) => {});
   };
   return (
     <>
@@ -104,7 +90,8 @@ const Registration = () => {
             </p>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="flex space-x-4  ">
-                <input required
+                <input
+                  required
                   type="text"
                   name="firstname"
                   placeholder="First Name"
@@ -112,7 +99,8 @@ const Registration = () => {
                   onChange={handleChange}
                   className="w-full  sm:w-1/2 px-4 py-3 border rounded-lg focus:outline-none focus:ring-4 focus:ring-green-100 border-gray-400"
                 />
-                <input required
+                <input
+                  required
                   type="text"
                   name="lastname"
                   placeholder="Last Name"
@@ -121,7 +109,8 @@ const Registration = () => {
                   className="w-full sm:w-1/2 px-4 py-3 border rounded-lg focus:outline-none focus:ring-4 focus:ring-green-100 border-gray-400"
                 />
               </div>
-              <input required
+              <input
+                required
                 type="email"
                 name="email"
                 placeholder="Email"
@@ -129,7 +118,8 @@ const Registration = () => {
                 onChange={handleChange}
                 className=" w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-4 focus:ring-green-100 border-gray-400"
               />
-              <input required
+              <input
+                required
                 type="password"
                 name="password"
                 placeholder="*****"
@@ -151,7 +141,6 @@ const Registration = () => {
           </div>
         </div>
       </div>
-
 
       <div>
         <Footer />
