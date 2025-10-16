@@ -29,7 +29,7 @@ const Registration = () => {
   }, []);
 
   let alreadyusers = () => {
-    axios.get("http://localhost:5000/allusers").then((res) => {
+    axios.get("https://freshcart-backend-do1f.vercel.app/allusers").then((res) => {
       if (res.data.status) {
         setusers(res.data.ourusers);
       }
@@ -48,7 +48,7 @@ const Registration = () => {
       });
     } else {
       axios
-        .post("http://localhost:5000/signup", { formData })
+        .post("https://freshcart-backend-do1f.vercel.app/signup", { formData })
         .then((res) => {
           if (res.data.status) {
             Swal.fire({

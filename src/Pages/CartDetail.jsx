@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { RxCross2 } from "react-icons/rx";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default function CartDetail() {
   let [cartitem, setcartitem] = useState([]);
@@ -12,7 +13,7 @@ export default function CartDetail() {
   }, []);
 
   let cartdata = () => {
-    axios.get("http://localhost:5000/allcartitem").then((res) => {
+    axios.get("https://freshcart-backend-do1f.vercel.app/allcartitem").then((res) => {
       if (res.data.status) {
         setcartitem(res.data.cartitem);
       }
@@ -21,12 +22,19 @@ export default function CartDetail() {
 
 
   let removeitem=(item)=>{
-    axios.post("http://localhost:5000/removecartitem",{item}).then((res) => {
+    axios.post("https://freshcart-backend-do1f.vercel.app/removecartitem",{item}).then((res) => {
       if (res.data.status) {
         window.location.reload()
       }
     });
   }
+
+
+
+
+  // total price :
+  const sum = cartitem.reduce((total, item) => total + item.regularPrice*item.weightUnit, 0); 
+
 
   return (
     < div className="fixed  z-40" >
@@ -34,7 +42,7 @@ export default function CartDetail() {
         <div className="flex justify-between items-center px-5">
           <div>
             <h1 className="text-[#21313c] text-2xl  font-medium  ">
-              Shop Cart
+              Shop Cart {sum}
             </h1>
             <p className="text-[#5c6c75]   font-medium  ">Location in 382480</p>
           </div>
@@ -92,7 +100,10 @@ export default function CartDetail() {
               Continue Shopping
             </button>
             <button className="bg-black text-white px-4 py-2 rounded">
+              <Link to={"/Chackout"}>
               Proceed To Checkout
+              </Link>
+              
             </button>
           </div>
         </div>

@@ -20,7 +20,7 @@ const Reset = () => {
     const handleSubmit =(e)=>{
       e.preventDefault();
 
-      axios.post("http://localhost:5000/reset", {resetData}).then ((res)=>{
+      axios.post("https://freshcart-backend-do1f.vercel.app/reset", {resetData}).then ((res)=>{
          if (res.data.status) {
                 Swal.fire({
                   text: "Sigin success",

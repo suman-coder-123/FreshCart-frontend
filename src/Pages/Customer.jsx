@@ -6,7 +6,7 @@ const Customer = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/allusers").then((res) => {
+    axios.get("https://freshcart-backend-do1f.vercel.app/allusers").then((res) => {
       if (res.data.status) {
         setUsers(res.data.ourusers);
       }
