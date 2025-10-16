@@ -24,9 +24,9 @@ const Registration = () => {
 
   // let [users, setusers] = useState([]);
 
-  useEffect(() => {
-    alreadyusers();
-  }, []);
+  // useEffect(() => {
+  //   alreadyusers();
+  // }, []);
 
   // let alreadyusers = () => {
   //   axios.get("https://freshcart-backend-opal.vercel.app/allusers").then((res) => {
