@@ -36,7 +36,7 @@ export default function Products() {
                 hover:border-green-500 hover:shadow-lg cursor-pointer"
                 onClick={() => productdeatails(item)}
               >
-                <img src={item.image} />
+                <img src={item.image1} />
                 <p className="text-[#5c6c75] text-base">{item.category}</p>
                 <p className="text-[#21313c] text-md font-medium">
                   {item.title}
