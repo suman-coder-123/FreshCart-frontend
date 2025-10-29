@@ -15,7 +15,7 @@ const ProductTable = ({product}) => {
                     <th className="p-3 text-[#5c6c75] font-medium ">Status</th>
                     <th className="p-3 text-[#5c6c75] font-medium ">Price</th>
                     <th className="p-3 text-[#5c6c75] font-medium ">Created At</th>
-                    <th className='p-3 '></th>
+                    <th className='p-3'></th>
                 </tr>
             </thead>
         <tbody>
@@ -23,7 +23,7 @@ const ProductTable = ({product}) => {
          <tr key={products._id} className="">
           <td className='p-3'> <input type="checkbox" /></td>
               <td className="p-3">
-                <img src={products.image} alt="product image" />
+                <img src={products.image1} alt="product image" />
               </td>
               <td className="p-3">{products.title}</td>
               <td className="p-3">{products.category || "—"}</td>

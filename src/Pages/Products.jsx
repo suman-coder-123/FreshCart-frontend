@@ -27,7 +27,7 @@ export default function Products() {
       <h1 className="text-[#21313c] text-2xl font-medium my-10">
         Popular Products
       </h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
         {product.map((item) => {
           return (
             <>
@@ -36,7 +36,7 @@ export default function Products() {
                 hover:border-green-500 hover:shadow-lg cursor-pointer"
                 onClick={() => productdeatails(item)}
               >
-                <img src={item.image1} />
+                <img src={item.image1} className="w-50 h-50" />
                 <p className="text-[#5c6c75] text-base">{item.category}</p>
                 <p className="text-[#21313c] text-md font-medium">
                   {item.title}
