@@ -145,10 +145,10 @@ const AddProduct = () => {
               <input
                 type="url"
                 placeholder="Enter Your Image URL "
-                name="image"
+                name="image1"
                 value={productData.image1}
                 onChange={handleChange}
-                id="image"
+                id="image1"
                 className="w-full px-3 py-2 my-2 border rounded-lg focus:outline-none focus:ring-4 focus:ring-green-100 border-gray-400"
               />
             </div>
@@ -158,10 +158,10 @@ const AddProduct = () => {
               <input
                 type="url"
                 placeholder="Enter Your Image URL "
-                name="image"
+                name="image2"
                 value={productData.image2}
                 onChange={handleChange}
-                id="image"
+                id="image2"
                 className="w-full px-3 py-2 my-2 border rounded-lg focus:outline-none focus:ring-4 focus:ring-green-100 border-gray-400"
               />
             </div>
@@ -171,10 +171,10 @@ const AddProduct = () => {
               <input
                 type="url"
                 placeholder="Enter Your Image URL "
-                name="image"
+                name="image3"
                 value={productData.image3}
                 onChange={handleChange}
-                id="image"
+                id="image3"
                 className="w-full px-3 py-2 my-2 border rounded-lg focus:outline-none focus:ring-4 focus:ring-green-100 border-gray-400"
               />
             </div>
@@ -184,10 +184,10 @@ const AddProduct = () => {
               <input
                 type="url"
                 placeholder="Enter Your Image URL "
-                name="image"
+                name="image4"
                 value={productData.image4}
                 onChange={handleChange}
-                id="image"
+                id="image4"
                 className="w-full px-3 py-2 my-2 border rounded-lg focus:outline-none focus:ring-4 focus:ring-green-100 border-gray-400"
               />
             </div>
@@ -197,10 +197,10 @@ const AddProduct = () => {
               <input
                 type="url"
                 placeholder="Enter Your Image URL "
-                name="image"
+                name="image5"
                 value={productData.image5}
                 onChange={handleChange}
-                id="image"
+                id="image5"
                 className="w-full px-3 py-2 my-2 border rounded-lg focus:outline-none focus:ring-4 focus:ring-green-100 border-gray-400"
               />
             </div>
