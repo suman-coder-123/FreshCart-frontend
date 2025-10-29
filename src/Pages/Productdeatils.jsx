@@ -102,28 +102,28 @@ export default function Productdeatils() {
         <div className="flex w-full px-10 py-4 ">
           <div className="w-1/2 ">
             <img
-              src={product.image}
+              src={product.image1}
               alt={product.title}
               className="w-80 h-80 m-auto object-cover rounded-lg"
             />
             <div className="flex items-center ">
               <img
-                src={product.image}
+                src={product.image2}
                 alt={product.title}
                 className="w-30 h-30 object-cover rounded-lg"
               />
               <img
-                src={product.image}
+                src={product.image3}
                 alt={product.title}
                 className="w-30 h-30 object-cover rounded-lg"
               />
               <img
-                src={product.image}
+                src={product.image4}
                 alt={product.title}
                 className="w-30 h-30 object-cover rounded-lg"
               />
               <img
-                src={product.image}
+                src={product.image5}
                 alt={product.title}
                 className="w-30 h-30 object-cover rounded-lg"
               />
