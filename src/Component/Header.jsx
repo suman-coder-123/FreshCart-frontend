@@ -199,12 +199,65 @@ const Header = () => {
           </div>
         </div>
         <div className="flex items-center gap-1">
-          <label htmlFor="menu" className="pb-1">
-            Mega Menu
-          </label>
-          <select name="menu" id="menu">
-            <option value="default"> </option>
-          </select>
+          <div className="relative group flex items-center gap-1 cursor-pointer">
+            <label className="pb-1 font-medium text-gray-800">Mega Menu</label>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-4 w-4 mt-1 text-gray-500"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+
+{/* Dropdown Menu */}
+<div className="absolute left-0 top-full mt-2 w-[700px] bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-10 p-4">
+  <div className="grid grid-cols-4 gap-4 text-gray-700">
+    {/* Column 1 */}
+    <ul className="space-y-1">
+      <li className="font-semibold text-green-600 mb-1">Category 1</li>
+      <li className="hover:text-green-600 cursor-pointer">Store List</li>
+      <li className="hover:text-green-600 cursor-pointer">Store Grid</li>
+      <li className="hover:text-green-600 cursor-pointer">Store Single</li>
+      <li className="hover:text-green-600 cursor-pointer">Store Map</li>
+    </ul>
+
+    {/* Column 2 */}
+    <ul className="space-y-1">
+      <li className="font-semibold text-green-600 mb-1">Category 2</li>
+      <li className="hover:text-green-600 cursor-pointer">New Arrivals</li>
+      <li className="hover:text-green-600 cursor-pointer">Top Rated</li>
+      <li className="hover:text-green-600 cursor-pointer">Discount Offers</li>
+      <li className="hover:text-green-600 cursor-pointer">Best Sellers</li>
+    </ul>
+
+    {/* Column 3 */}
+    <ul className="space-y-1">
+      <li className="font-semibold text-green-600 mb-1">Category 3</li>
+      <li className="hover:text-green-600 cursor-pointer">Fashion</li>
+      <li className="hover:text-green-600 cursor-pointer">Electronics</li>
+      <li className="hover:text-green-600 cursor-pointer">Groceries</li>
+      <li className="hover:text-green-600 cursor-pointer">Home Decor</li>
+    </ul>
+
+    {/* Column 4 */}
+    <ul className="space-y-1">
+      <li className="font-semibold text-green-600 mb-1">Category 4</li>
+      <li className="hover:text-green-600 cursor-pointer">Beauty</li>
+      <li className="hover:text-green-600 cursor-pointer">Toys</li>
+      <li className="hover:text-green-600 cursor-pointer">Sports</li>
+      <li className="hover:text-green-600 cursor-pointer">Accessories</li>
+    </ul>
+  </div>
+</div>
+
+          </div>
         </div>
         <div className="flex items-center gap-1">
           <label htmlFor="pages" className="pb-1">
