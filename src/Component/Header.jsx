@@ -217,44 +217,44 @@ const Header = () => {
             </svg>
 
 {/* Dropdown Menu */}
-<div className="absolute left-0 top-full mt-2 w-[700px] bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-10 p-4">
+<div className="absolute left-0 top-full mt-2 w-full bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-10 p-4">
   <div className="grid grid-cols-4 gap-4 text-gray-700">
     {/* Column 1 */}
     <ul className="space-y-1">
-      <li className="font-semibold text-green-600 mb-1">Dairy , Bread & Eggs </li>
-      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Butter </li>
-      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer"> Curd & Yogurt </li>
-      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Eggs </li>
-      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Buns & Bakery</li>
-      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Cheese</li>
-      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Condensed & Milk</li>
-      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Dairy Products</li>
+      <li className="font-semibold text-green-600 mb-1 whitespace-nowrap">Dairy , Bread & Eggs </li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer whitespace-nowrap">Butter </li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer whitespace-nowrap"> Curd & Yogurt </li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer whitespace-nowrap">Eggs </li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer whitespace-nowrap">Buns & Bakery</li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer whitespace-nowrap">Cheese</li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer whitespace-nowrap">Condensed & Milk</li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer whitespace-nowrap">Dairy Products</li>
     </ul>
 
     {/* Column 2 */}
     <ul className="space-y-1">
-      <li className="font-semibold text-green-600 mb-1">Breakfast & Instant Food</li>
-      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Breakfast Cereal</li>
-      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Noodles , Pasta & Soup</li>
-      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Frozen Veg Snacks </li>
-      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Frozen Non-Veg Snacks </li>
-      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Instant Mixes  </li>
-      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Batter</li>
-      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Fruits and Juices </li>
+      <li className="font-semibold text-green-600 mb-1 whitespace-nowrap">Breakfast & Instant Food</li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer whitespace-nowrap">Breakfast Cereal</li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer whitespace-nowrap">Noodles , Pasta & Soup</li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer whitespace-nowrap">Frozen Veg Snacks </li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer whitespace-nowrap">Frozen Non-Veg Snacks </li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer whitespace-nowrap">Instant Mixes  </li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer whitespace-nowrap">Batter</li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer whitespace-nowrap">Fruits and Juices </li>
 
     </ul>
 
     {/* Column 3 */}
     <ul className="space-y-1">
-      <li className="font-semibold text-green-600 mb-1">Cold Drinks & Juices</li>
-      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Soft Drinks </li>
-      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Fruit Juices </li>
-      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Coldpress</li>
-      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Water & Ice Cubes </li>
-      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Soda & Mixes </li>
-      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Health Drinks </li>
-      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Herbal Drinks </li>
-      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Milk Drinks </li>
+      <li className="font-semibold text-green-600 mb-1 whitespace-nowrap">Cold Drinks & Juices</li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer whitespace-nowrap">Soft Drinks </li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer whitespace-nowrap">Fruit Juices </li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer whitespace-nowrap">Coldpress</li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer whitespace-nowrap">Water & Ice Cubes </li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer whitespace-nowrap">Soda & Mixes </li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer whitespace-nowrap">Health Drinks </li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer whitespace-nowrap">Herbal Drinks </li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer whitespace-nowrap">Milk Drinks </li>
 
 
     </ul>
