@@ -9,7 +9,7 @@ import { FiShoppingBag } from "react-icons/fi";
 import { IoGridOutline } from "react-icons/io5";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross2 } from "react-icons/rx";
-
+import menu1 from "../assets/Images/menu1.jpg"
 const Header = () => {
   return (
     <>
@@ -221,39 +221,48 @@ const Header = () => {
   <div className="grid grid-cols-4 gap-4 text-gray-700">
     {/* Column 1 */}
     <ul className="space-y-1">
-      <li className="font-semibold text-green-600 mb-1">Category 1</li>
-      <li className="hover:text-green-600 cursor-pointer">Store List</li>
-      <li className="hover:text-green-600 cursor-pointer">Store Grid</li>
-      <li className="hover:text-green-600 cursor-pointer">Store Single</li>
-      <li className="hover:text-green-600 cursor-pointer">Store Map</li>
+      <li className="font-semibold text-green-600 mb-1">Dairy , Bread & Eggs </li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Butter </li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer"> Curd & Yogurt </li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Eggs </li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Buns & Bakery</li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Cheese</li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Condensed & Milk</li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Dairy Products</li>
     </ul>
 
     {/* Column 2 */}
     <ul className="space-y-1">
-      <li className="font-semibold text-green-600 mb-1">Category 2</li>
-      <li className="hover:text-green-600 cursor-pointer">New Arrivals</li>
-      <li className="hover:text-green-600 cursor-pointer">Top Rated</li>
-      <li className="hover:text-green-600 cursor-pointer">Discount Offers</li>
-      <li className="hover:text-green-600 cursor-pointer">Best Sellers</li>
+      <li className="font-semibold text-green-600 mb-1">Breakfast & Instant Food</li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Breakfast Cereal</li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Noodles , Pasta & Soup</li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Frozen Veg Snacks </li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Frozen Non-Veg Snacks </li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Instant Mixes  </li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Batter</li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Fruits and Juices </li>
+
     </ul>
 
     {/* Column 3 */}
     <ul className="space-y-1">
-      <li className="font-semibold text-green-600 mb-1">Category 3</li>
-      <li className="hover:text-green-600 cursor-pointer">Fashion</li>
-      <li className="hover:text-green-600 cursor-pointer">Electronics</li>
-      <li className="hover:text-green-600 cursor-pointer">Groceries</li>
-      <li className="hover:text-green-600 cursor-pointer">Home Decor</li>
+      <li className="font-semibold text-green-600 mb-1">Cold Drinks & Juices</li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Soft Drinks </li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Fruit Juices </li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Coldpress</li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Water & Ice Cubes </li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Soda & Mixes </li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Health Drinks </li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Herbal Drinks </li>
+      <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Milk Drinks </li>
+
+
     </ul>
 
     {/* Column 4 */}
-    <ul className="space-y-1">
-      <li className="font-semibold text-green-600 mb-1">Category 4</li>
-      <li className="hover:text-green-600 cursor-pointer">Beauty</li>
-      <li className="hover:text-green-600 cursor-pointer">Toys</li>
-      <li className="hover:text-green-600 cursor-pointer">Sports</li>
-      <li className="hover:text-green-600 cursor-pointer">Accessories</li>
-    </ul>
+    <div className="space-y-1">
+      <img src={menu1} alt="menu banner" className="cursor-pointer w-full h-full" />
+    </div>
   </div>
 </div>
 
