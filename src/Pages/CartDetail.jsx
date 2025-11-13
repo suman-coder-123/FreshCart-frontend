@@ -6,7 +6,8 @@ import { Link } from "react-router-dom";
 
 export default function CartDetail() {
   let [cartitem, setcartitem] = useState([]);
-  
+   const [isOpen, setIsOpen] = useState(true);
+
 
   useEffect(() => {
     cartdata();
@@ -37,6 +38,8 @@ export default function CartDetail() {
 
 
   return (
+    <>
+      {isOpen && (
     < div className="fixed  z-40" >
       <div className="fixed top-0 right-0 w-1/2 h-full shadow-lg z-50 flex flex-col  ">
         <div className="flex justify-between items-center px-5">
@@ -47,10 +50,11 @@ export default function CartDetail() {
             <p className="text-[#5c6c75]   font-medium  ">Location in 382480</p>
           </div>
 
-          <div>
-            <button >
+          <div><Link to="/Home">
+            <button onClick={() => setIsOpen(false)}  >
               <RxCross2 className="w-5 h-5 text-gray-500" />
             </button>
+            </Link>
           </div>
         </div>
         <div className="overflow-y-auto flex-1 px-5">
@@ -96,9 +100,11 @@ export default function CartDetail() {
             </div>
           ))}
           <div className="p-4 border-t flex justify-between">
+            <Link to="/Home">
             <button className="bg-green-600 text-white px-4 py-2 rounded">
               Continue Shopping
             </button>
+            </Link>
             <button className="bg-black text-white px-4 py-2 rounded">
               <Link to={"/Chackout"}>
               Proceed To Checkout
@@ -109,5 +115,7 @@ export default function CartDetail() {
         </div>
       </div>
     </div>
+    )}
+    </>
   );
 }

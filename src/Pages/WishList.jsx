@@ -59,7 +59,7 @@ const WishList = () => {
                 </td>
                 <td className="p-3 flex items-center gap-3">
                   <img
-                    src={item.image}
+                    src={item.image1}
                     alt={item.title}
                     className="w-14 h-14 object-cover rounded"
                   />

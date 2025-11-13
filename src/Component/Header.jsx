@@ -217,8 +217,8 @@ const Header = () => {
             </svg>
 
 {/* Dropdown Menu */}
-<div className="absolute left-0 top-full mt-2 w-full bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-10 p-4">
-  <div className="grid grid-cols-4 gap-4 text-gray-700">
+  <div className="absolute left-1/2 top-full mt-2 -translate-x-1/2 w-[90vw] bg-white shadow-lg border border-gray-100 rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+        <div className="max-w-7xl mx-auto px-8 py-8 grid grid-cols-4 gap-8">
     {/* Column 1 */}
     <ul className="space-y-1">
       <li className="font-semibold text-green-600 mb-1 whitespace-nowrap">Dairy , Bread & Eggs </li>
@@ -269,26 +269,96 @@ const Header = () => {
           </div>
         </div>
         <div className="flex items-center gap-1">
-          <label htmlFor="pages" className="pb-1">
-            Pages
-          </label>
-          <select name="pages" id="pages">
-            <option value="default"> </option>
-          </select>
+      <div className="relative group flex items-center gap-1 cursor-pointer">
+            <label className="pb-1 font-medium text-gray-800">Pages</label>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-4 w-4 mt-1 text-gray-500"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+
+            {/* Dropdown Menu */}
+            <div className="absolute left-0 top-full mt-2 w-48 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10">
+              <ul className="py-2 text-gray-700">
+                <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                  Blog
+                </li>
+                <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                  Blog Single
+                </li>
+                <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                  Blog Catagory
+                </li>
+               <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                  About us 
+                </li>
+                <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                 404 Error 
+                </li>
+                <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                 Contact us 
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
         <div className="flex items-center gap-1">
-          <label htmlFor="account" className="pb-1">
-            Account
-          </label>
-          <select name="account" id="account">
-            <option value="default"> </option>
-          </select>
+                    <div className="relative group flex items-center gap-1 cursor-pointer">
+            <label className="pb-1 font-medium text-gray-800">Account</label>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-4 w-4 mt-1 text-gray-500"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+
+            {/* Dropdown Menu */}
+            <div className="absolute left-0 top-full mt-2 w-48 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10">
+              <ul className="py-2 text-gray-700">
+                <Link to="/signin">
+                <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                  Sign In
+                </li>
+                </Link>
+                <Link to="/registration">
+                <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                  Sign up
+                </li>
+                </Link>
+                <Link to="/reset">
+                <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                   Forget Password 
+                </li>
+                </Link>
+               <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                  My Account  
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
 
-        <p className="pb-1">
+        <p className="pb-1 hover:text-green-400 ">
           <Link to="/admin">Dashboard</Link>
         </p>
-        <p className="pb-1">Docs</p>
+        <p className="pb-1 hover:text-green-400 ">Docs</p>
       </div>
 
       {open && (
