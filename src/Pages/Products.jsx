@@ -48,7 +48,7 @@ export default function Products() {
                       ${item.salePrice}
                     </span>
                   </p>
-                  <button className="bg-[#0aad0a] text-[#ffffff] text-md font-medium px-2 py-1 rounded">
+                  <button  className="bg-[#0aad0a] text-[#ffffff] text-md font-medium px-2 py-1 rounded">
                     {" "}
                     + Add
                   </button>
