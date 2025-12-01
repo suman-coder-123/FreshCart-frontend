@@ -12,21 +12,18 @@ export default function CartDetail() {
     cartdata();
   }, []);
 
-  // Fetch cart data
   const cartdata = () => {
     axios
       .get("https://freshcart-backend-opal.vercel.app/allcartitem")
       .then((res) => {
-const updated = res.data.cartitem.map(i => ({
-  ...i,
-  qty: Number(i.weightUnit) || 1,
-}));
-setcartitem(updated);
-
+        const updated = res.data.cartitem.map((i) => ({
+          ...i,
+          qty: Number(i.weightUnit) || 1,
+        }));
+        setcartitem(updated);
       });
   };
 
-  // Remove cart item
   const removeitem = (item) => {
     axios
       .post("https://freshcart-backend-opal.vercel.app/removecartitem", {
@@ -39,28 +36,25 @@ setcartitem(updated);
       });
   };
 
-  // Increment quantity
   const increment = (id) => {
-  setcartitem(prev =>
-    prev.map(item =>
-      item._id === id ? { ...item, qty: Number(item.qty) + 1 } : item
-    )
-  );
-};
+    setcartitem((prev) =>
+      prev.map((item) =>
+        item._id === id ? { ...item, qty: Number(item.qty) + 1 } : item
+      )
+    );
+  };
 
-  // Decrement quantity (minimum 1)
   const decrement = (id) => {
-  setcartitem(prev =>
-    prev.map(item =>
-      item._id === id
-        ? { ...item, qty: Math.max(1, Number(item.qty) - 1) }
-        : item
-    )
-  );
-};
+    setcartitem((prev) =>
+      prev.map((item) =>
+        item._id === id
+          ? { ...item, qty: Math.max(1, Number(item.qty) - 1) }
+          : item
+      )
+    );
+  };
 
-
-  // Total price
+  // Total sum
   const sum = cartitem.reduce(
     (total, item) => total + item.regularPrice * item.qty,
     0
@@ -91,7 +85,7 @@ setcartitem(updated);
             <div className="overflow-y-auto flex-1 px-5">
               {cartitem.map((item) => (
                 <div
-                  key={item.id}
+                  key={item._id}
                   className="flex items-center justify-between mb-4"
                 >
                   <div className="flex items-center gap-3">
@@ -115,7 +109,6 @@ setcartitem(updated);
                     </div>
                   </div>
 
-                  {/* Quantity Box */}
                   <div className="flex items-center px-4">
                     <button
                       onClick={() => decrement(item._id)}
@@ -136,23 +129,29 @@ setcartitem(updated);
                     </button>
                   </div>
 
-                  {/* Price */}
                   <div>
-                    <p className="px-4 font-bold">₹{item.regularPrice * item.qty}</p>
+                    <p className="px-4 font-bold">
+                      ₹{item.regularPrice * item.qty}
+                    </p>
                   </div>
                 </div>
               ))}
 
               <div className="p-4 border-t flex justify-between">
                 <Link to="/Home">
-                  <button className="bg-green-600 text-white px-4 py-2 rounded cursor-pointer">
+                  <button className="bg-green-600 text-white px-4 py-2 rounded">
                     Continue Shopping
                   </button>
                 </Link>
 
-                <button className="bg-black text-white px-4 py-2 rounded cursor-pointer">
-                  <Link to={"/Chackout"}>Proceed To Checkout</Link>
-                </button>
+                <Link
+                  to="/Chackout"
+                  state={{ totalAmount: sum }} // ⭐ sending sum to checkout
+                >
+                  <button className="bg-black text-white px-4 py-2 rounded">
+                    Proceed To Checkout
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
